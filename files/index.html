@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Cache test</title>
+        <style>
+            body {
+                background: #ccc;
+                margin: 0;
+            }
+
+            .half {
+                width: 50vw;
+                height: 100vh;
+                float: left;
+                padding: 0;
+                margin: 0;
+            }
+
+            .half img {
+                display: block;
+                height: 25vh;
+                max-width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="half">
+            <img src="/1.jpg?v1&Cache-Control=public, max-age=10000" alt="">
+            <img src="/2.jpg?v1&Cache-Control=public, max-age=10000" alt="">
+            <img src="/3.jpg?v1&Cache-Control=public, max-age=10000" alt="">
+            <img src="/4.jpg?v1&Cache-Control=public, max-age=10000" alt="">
+        </div>
+        <div class="half">
+            <img src="/1.jpg?v2&etag=123456789" alt="">
+            <img src="/2.jpg?v2&etag=123456789" alt="">
+            <img src="/3.jpg?v2&etag=123456789" alt="">
+            <img src="/4.jpg?v2&etag=123456789" alt="">
+        </div>
+    </body>
+</html>
